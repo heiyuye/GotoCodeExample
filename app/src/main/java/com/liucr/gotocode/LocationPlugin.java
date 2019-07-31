@@ -239,19 +239,17 @@ public class LocationPlugin {
                 public void run() {
                     StackTraceElement[] sts = Looper.getMainLooper().getThread().getStackTrace();
                     StringBuilder log = new StringBuilder();
-                    List<StackTraceElement> traceElements = new ArrayList<>();
+                    List<String> traceElements = new ArrayList<>();
                     for (StackTraceElement st : sts) {
                         if (st.isNativeMethod()) {
                             continue;
                         }
                         if (st.getClassName().startsWith(appID)) {
-                            log.append("|").append(getCallName(st));
-                            traceElements.add(st);
+                            String stString = st.getClassName() + "|" + st.getFileName() + "|" + st.getMethodName() + "|" + st.getLineNumber();
+                            traceElements.add(stString);
                         }
                     }
-                    String s = log.toString();
-                    if (!TextUtils.isEmpty(s)) {
-                        s = s.replaceFirst("\\|", "");
+                    if (!traceElements.isEmpty()) {
                         Log.d("ClickEvent", traceElements.toString());
                     }
                 }
