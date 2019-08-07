@@ -13,7 +13,22 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void onClickTextView(View view){
-        Toast.makeText(this,"onClickTextView",Toast.LENGTH_LONG).show();
+    public void onClickTextView(View view) {
+        method1();
+        method3();
+        Toast.makeText(this, "onClickTextView", Toast.LENGTH_LONG).show();
+    }
+
+    public void method1() {
+        method2();
+        Toast.makeText(this, "method1", Toast.LENGTH_LONG).show();
+    }
+
+    public void method2() {
+        Toast.makeText(this, "method2", Toast.LENGTH_LONG).show();
+    }
+
+    public void method3() {
+        Toast.makeText(this, "method3", Toast.LENGTH_LONG).show();
     }
 }
