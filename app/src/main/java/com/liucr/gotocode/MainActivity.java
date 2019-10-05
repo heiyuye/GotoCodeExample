@@ -1,16 +1,27 @@
 package com.liucr.gotocode;
 
+import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
+
+//    @Override
+//    public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
+//        super.onCreate(savedInstanceState, persistentState);
+//    }
+//
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_main);
+//    }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    int initLayout() {
+        return R.layout.activity_main;
     }
 
     public void onClickTextView(View view) {
